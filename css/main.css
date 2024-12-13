@@ -1091,37 +1091,90 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * 09. test styles - (_layout.scss)
  *
  * ---/* ==========================================================
-  /* ==========================================================
    Global Header Styles
    ========================================================== */
 
 header {
+    position: fixed;
+    width: 100%;
+    min-height: 66px;
+    z-index: 600;
+}
+
+header .row {
+    position: relative;
+    min-height: 66px;
+}
+
+header .top-bar {
+    display: block;
+    background: #000;
+    min-width: 220px;
+    min-height: 66px;
+    position: absolute;
+    left: 90px;
+    top: 0;
+}
+
+header .logo {
+    float: left;
+    position: relative;
+}
+
+header .logo a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    width: 92px;
+    height: 15px;
+    background: url("../images/logo.png") no-repeat center;
+    background-size: 92px 15px;
+}
+.logo {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+/* ==========================================================
+   Fixed Header Styles
+   ========================================================== */
+
+.fixed-header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #000;
     color: #fff;
     z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-header .container {
+.fixed-header .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 70px;
+    position: relative;
 }
 
 /* Navigation Styles */
+
 .header-left {
-    flex: 1;
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
 .header-left nav ul {
@@ -1145,28 +1198,30 @@ header .container {
 }
 
 /* Logo Styles */
+
 .header-center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
 }
 
-.header-center .logo img {
-    max-height: 60px;
+.fixed-header .logo img {
+    max-height: 100px;
     width: auto;
     display: block;
+    padding: 5%;
 }
 
 /* Social Icons */
+
 .header-right {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 }
 
-.header-right .social-icons {
+.fixed-header .social-icons {
     list-style: none;
     display: flex;
     gap: 15px;
@@ -1174,13 +1229,13 @@ header .container {
     padding: 0;
 }
 
-.header-right .social-icons li a {
+.fixed-header .social-icons li a {
     color: #fff;
     font-size: 20px;
     transition: color 0.3s ease;
 }
 
-.header-right .social-icons li a:hover {
+.fixed-header .social-icons li a:hover {
     color: #c58ade;
 }
 
@@ -1189,21 +1244,21 @@ header .container {
    ========================================================== */
 
 @media (max-width: 768px) {
-    header .container {
+
+    .fixed-header .container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .fixed-header {
         height: auto;
         padding: 10px;
     }
 
-    .header-center {
-        position: relative;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    .header-center .logo img {
-        max-height: 50px;
+	.header-center .logo img {
+        max-height: 55px; /* Taille plus petite pour mobile */
+        padding-top: 20px ;
+		padding-left: 10px;
     }
 
     .header-left nav ul {
@@ -1214,33 +1269,15 @@ header .container {
         font-size: 12px;
     }
 
-    .header-right .social-icons {
+    .header-right ul.social-icons {
         margin-top: 10px;
         gap: 10px;
     }
 
-    .header-right .social-icons li a {
+    .header-right ul.social-icons li a {
         font-size: 16px;
     }
-}
 
-@media (max-width: 480px) {
-    .header-center .logo img {
-        max-height: 40px;
-    }
-
-    .header-left nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .header-left nav ul li a {
-        font-size: 10px;
-    }
-
-    .header-right .social-icons {
-        gap: 8px;
-    }
 }
 
 
