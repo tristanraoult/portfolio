@@ -1,69 +1,74 @@
 ﻿<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Replace this with your own email address
-$siteOwnersEmail = 'user@website.com';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
+// Adresse email du destinataire
+$siteOwnersEmail = 'tristan.raoult62@gmail.com';
 
-if($_POST) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupération des données
+    $name = htmlspecialchars(trim($_POST['contactName']));
+    $email = htmlspecialchars(trim($_POST['contactEmail']));
+    $subject = htmlspecialchars(trim($_POST['contactSubject']));
+    $contact_message = htmlspecialchars(trim($_POST['contactMessage']));
 
-   $name = trim(stripslashes($_POST['contactName']));
-   $email = trim(stripslashes($_POST['contactEmail']));
-   $subject = trim(stripslashes($_POST['contactSubject']));
-   $contact_message = trim(stripslashes($_POST['contactMessage']));
+    // Validation des champs
+    $error = [];
+    if (strlen($name) < 2) {
+        $error['name'] = "Veuillez entrer un nom valide (minimum 2 caractères).";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error['email'] = "Veuillez entrer une adresse email valide.";
+    }
+    if (strlen($contact_message) < 15) {
+        $error['message'] = "Votre message doit contenir au moins 15 caractères.";
+    }
+    if (empty($subject)) {
+        $subject = "Formulaire de contact";
+    }
 
-   // Check Name
-	if (strlen($name) < 2) {
-		$error['name'] = "Please enter your name.";
-	}
-	// Check Email
-	if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-		$error['email'] = "Please enter a valid email address.";
-	}
-	// Check Message
-	if (strlen($contact_message) < 15) {
-		$error['message'] = "Please enter your message. It should have at least 15 characters.";
-	}
-   // Subject
-	if ($subject == '') { $subject = "Contact Form Submission"; }
+    // Si aucune erreur
+    if (!$error) {
+        $mail = new PHPMailer(true);
+        try {
+            // Configuration SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'tristan.raoult62@gmail.com'; // Votre email Gmail
+            $mail->Password = 'zxgc abho ufsn iqyn'; // Mot de passe d'application Gmail
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
+            // Destinataires
+            $mail->setFrom($email, $name);
+            $mail->addAddress($siteOwnersEmail);
 
-   // Set Message
-   $message .= "Email from: " . $name . "<br />";
-	$message .= "Email address: " . $email . "<br />";
-   $message .= "Message: <br />";
-   $message .= $contact_message;
-   $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
+            // Contenu
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = "
+                <strong>Nom :</strong> {$name}<br>
+                <strong>Email :</strong> {$email}<br>
+                <strong>Message :</strong><br>{$contact_message}
+            ";
+            $mail->AltBody = "Nom : {$name}\nEmail : {$email}\nMessage :\n{$contact_message}";
 
-   // Set From: header
-   $from =  $name . " <" . $email . ">";
-
-   // Email Headers
-	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $email . "\r\n";
- 	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-
-   if (!$error) {
-
-      ini_set("sendmail_from", $siteOwnersEmail); // for windows server
-      $mail = mail($siteOwnersEmail, $subject, $message, $headers);
-
-		if ($mail) { echo "OK"; }
-      else { echo "Something went wrong. Please try again."; }
-		
-	} # end if - no validation error
-
-	else {
-
-		$response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
-		$response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
-		$response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
-		
-		echo $response;
-
-	} # end if - there was a validation error
-
+            // Envoi
+            $mail->send();
+            echo "Votre message a bien été envoyé !";
+        } catch (Exception $e) {
+            echo "Erreur lors de l'envoi : {$mail->ErrorInfo}";
+        }
+    } else {
+        // Retour des erreurs
+        foreach ($error as $err) {
+            echo $err . "<br>";
+        }
+    }
 }
-
 ?>

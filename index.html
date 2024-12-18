@@ -833,42 +833,32 @@
    		<div class="col-twelve">
 
             <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="">
+            <form name="contactForm" id="contactForm" method="post" action="inc/sendEmail.php">
 				<fieldset>
 					<div class="form-field">
-						<input name="contactName" type="text" id="contactName" placeholder="Nom" value="" minlength="2" required="">
+						<input name="contactName" type="text" id="contactName" placeholder="Nom" minlength="2" required>
 					</div>
 					<div class="form-field">
-						<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+						<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" required>
 					</div>
 					<div class="form-field">
-						<input name="contactSubject" type="text" id="contactSubject" placeholder="Sujet" value="">
-					</div>                       
+						<input name="contactSubject" type="text" id="contactSubject" placeholder="Sujet">
+					</div>
 					<div class="form-field">
-						<textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10" cols="50" required=""></textarea>
-					</div>                       
+						<textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10" required></textarea>
+					</div>
 					<div class="form-field">
-						<button class="submitform">Envoyer</button>
-						<div id="submit-loader">
-							<div class="text-loader">Envoi en cours...</div>                             
-							<div class="s-loader">
-								<div class="bounce1"></div>
-								<div class="bounce2"></div>
-								<div class="bounce3"></div>
-							</div>
-						</div>
+						<button class="submitform" type="submit">Envoyer</button>
 					</div>
 				</fieldset>
 				
       		</form> <!-- Form End -->
 
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Votre message à été envoyé, Merci!<br>
-      		</div>
+			  <div id="message-warning" style="color: red; display: none;"></div>
+			  <div id="message-success" style="color: green; display: none;">
+				  <i class="fa fa-check"></i>Votre message a été envoyé, merci !
+			  </div>
+			  
 
          </div> <!-- /col-twelve -->
    		
