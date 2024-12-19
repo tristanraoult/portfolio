@@ -1,8 +1,10 @@
 ﻿<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+?>
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
@@ -42,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'tristan.raoult62@gmail.com'; // Votre email Gmail
-            $mail->Password = 'zxgc abho ufsn iqyn'; // Mot de passe d'application Gmail
+            $mail->Password = 'rtli ubfg xezp yehp'; // Mot de passe d'application Gmail
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -72,7 +74,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo json_encode(['success' => false, 'message' => 'Méthode non autorisée.']);
 }
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 ?>
