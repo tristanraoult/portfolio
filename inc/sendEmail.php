@@ -1,6 +1,8 @@
 ﻿<?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
@@ -70,4 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo json_encode(['success' => false, 'message' => 'Méthode non autorisée.']);
 }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 ?>
