@@ -2,15 +2,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
 
 // Adresse email du destinataire
 $siteOwnersEmail = 'tristan.raoult62@gmail.com';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données
+    // Récupération des données du formulaire
     $name = htmlspecialchars(trim($_POST['contactName']));
     $email = htmlspecialchars(trim($_POST['contactEmail']));
     $subject = htmlspecialchars(trim($_POST['contactSubject']));
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Si aucune erreur
-    if (!$error) {
+    if (empty($error)) {
         $mail = new PHPMailer(true);
         try {
             // Configuration SMTP
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->setFrom($email, $name);
             $mail->addAddress($siteOwnersEmail);
 
-            // Contenu
+            // Contenu de l'email
             $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body = "
@@ -60,15 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Envoi
             $mail->send();
-            echo "Votre message a bien été envoyé !";
+            echo json_encode(['success' => true, 'message' => 'Votre message a bien été envoyé !']);
         } catch (Exception $e) {
-            echo "Erreur lors de l'envoi : {$mail->ErrorInfo}";
+            echo json_encode(['success' => false, 'message' => "Erreur lors de l'envoi : {$mail->ErrorInfo}"]);
         }
     } else {
-        // Retour des erreurs
-        foreach ($error as $err) {
-            echo $err . "<br>";
-        }
+        echo json_encode(['success' => false, 'errors' => $error]);
     }
+} else {
+    echo json_encode(['success' => false, 'message' => 'Méthode non autorisée.']);
 }
 ?>

@@ -217,6 +217,35 @@
 	------------------------------------------------------ */
 
 	/* local validation */
+	document.getElementById('contactForm').addEventListener('submit', function (e) {
+		e.preventDefault();
+	
+		const form = e.target;
+		const formData = new FormData(form);
+	
+		fetch(form.action, {
+			method: 'POST',
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				document.getElementById('message-success').style.display = 'block';
+				document.getElementById('message-warning').style.display = 'none';
+				form.reset();
+			} else {
+				document.getElementById('message-warning').style.display = 'block';
+				document.getElementById('message-warning').innerText = data.message || Object.values(data.errors).join('\n');
+				document.getElementById('message-success').style.display = 'none';
+			}
+		})
+		.catch(error => {
+			document.getElementById('message-warning').style.display = 'block';
+			document.getElementById('message-warning').innerText = 'Une erreur est survenue. Veuillez réessayer.';
+			console.error('Erreur :', error);
+		});
+	});
+	
 	$('#contactForm').validate({
 
 		/* submit via ajax */
