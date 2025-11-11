@@ -1,0 +1,55 @@
+/* ====== Overrides Tristan 2025 ====== */
+:root{
+  --accent:#10b981;   /* ↩️ mets ici la couleur de ton CV */
+  --text:#e9eaec;
+  --muted:#b7bbc3;
+}
+
+/* Couleurs principales (remplace le violet) */
+h1, h2, h3, h4, h5, h6,
+.h01, .h02, .h03, .h04, .h05, .h06 { color: var(--accent) !important; }
+a:hover, a:focus, a:active { color: var(--accent) !important; text-decoration: none; }
+ul.disc li::before { background: var(--accent) !important; }
+dt { color: var(--accent) !important; }
+
+/* Boutons */
+.button, button, input[type=submit]{
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #03150f !important;
+}
+.button.stroke{
+  background: transparent !important;
+  color: var(--text) !important;
+  border-color: rgba(255,255,255,.18) !important;
+}
+.button:hover, .button:focus{ filter: brightness(0.95); }
+
+/* Header / Social */
+.fixed-header .social-icons a i { color: var(--text) !important; opacity:.9; }
+
+/* CTA héro (si présent) */
+.hero-cta{ margin-top:1.2rem; display:inline-flex; gap:.75rem; flex-wrap:wrap; }
+.hero-cta .mini-link{ color:var(--accent)!important; border-bottom:1px dashed rgba(255,255,255,.18); padding-bottom:2px; }
+
+/* Timeline lisible */
+.resume-timeline .timeline-block .timeline-header h3 { color: var(--accent) !important; }
+.resume-timeline .timeline-block .timeline-header p { opacity:.85; }
+.resume-timeline .timeline-block ul { margin-top:.6rem; }
+.resume-timeline .timeline-block ul li { margin:.2rem 0; }
+
+/* Contact */
+#contact .lead a { color: var(--accent) !important; }
+
+/* Bouton flottant “Gloomy Hub” */
+.hub-fab{
+  position: fixed; right: 18px; bottom: 18px; z-index: 9999;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 14px; border-radius: 999px;
+  background: var(--accent); color:#03150f; font-weight:800;
+  text-decoration: none; border: 0; box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  transition: transform .15s ease, box-shadow .15s ease; letter-spacing:.2px;
+}
+.hub-fab:hover{ transform: translateY(-1px); box-shadow: 0 10px 38px rgba(0,0,0,.45); }
+
+

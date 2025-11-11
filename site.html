@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Tristan Raoult — Portfolio</title>
+	<meta name="description"
+		content="Tristan Raoult (GloomyGraphic) — Graphiste & Motion Designer. Portfolio, expériences, services et contact." />
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<!-- Titres : Bricolage Grotesque / Texte : Inter -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@300;400;600;800&display=swap"
+		rel="stylesheet" />
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/site-da.css" />
+
+	<link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body id="top">
+
+	<!-- Décor inspiré du CV (grille + halos + courbe organique animée) -->
+	<svg class="bg-shapes" viewBox="0 0 1440 1024" aria-hidden="true">
+		<defs>
+			<pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+				<path d="M 42 0 L 0 0 0 42" fill="none" stroke="rgba(232,223,210,.06)" stroke-width="1" />
+			</pattern>
+			<radialGradient id="halo1" cx="80%" cy="8%" r="40%">
+				<stop offset="0%" stop-color="rgba(209,246,193,.28)" />
+				<stop offset="100%" stop-color="rgba(209,246,193,0)" />
+			</radialGradient>
+			<radialGradient id="halo2" cx="20%" cy="80%" r="50%">
+				<stop offset="0%" stop-color="rgba(252,214,182,.22)" />
+				<stop offset="100%" stop-color="rgba(252,214,182,0)" />
+			</radialGradient>
+		</defs>
+		<rect width="100%" height="100%" fill="url(#grid)" />
+		<rect width="100%" height="100%" fill="url(#halo1)" />
+		<rect width="100%" height="100%" fill="url(#halo2)" />
+		<!-- courbe façon "câble" -->
+		<path id="squiggle" d="M-80 280 C 120 120, 260 460, 520 380 S 900 180, 1100 360 1400 720, 1600 560" fill="none"
+			stroke="rgba(232,223,210,.45)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 10" />
+	</svg>
+
+	<!-- Header -->
+	<header class="site-header">
+		<a class="brand" href="#top" aria-label="Accueil">Tristan&nbsp;Raoult</a>
+		<img class="logo-eyes-nav" src="images/logo_header.png" alt="GloomyGraphic" />
+		<nav class="site-nav" aria-label="Navigation">
+			<a href="#projects">Projets</a>
+			<a href="#experience">Expériences</a>
+			<a href="#skills">Compétences</a>
+			<a href="#services">Services</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<!-- HERO -->
+		<section class="hero">
+
+			<p class="overtitle">Graphiste & Motion Designer — Bordeaux/Bayonne</p>
+			<h1 class="title">Tristan&nbsp;Raoult</h1>
+			<p class="lead">
+				Identités visuelles, contenus vidéo & motion design.
+				Je crée des visuels clairs et mémorables — avec une DA inspirée, comme sur mon CV.
+			</p>
+			<div class="cta">
+				<a class="btn"
+   				href="docs/CV-Tristan-Raoult.pdf"
+   				target="_blank"
+  				rel="noopener noreferrer">📁 Télécharger le CV </a>
+				<button class="btn" id="viewPortfolioBtn" type="button">🎨 Télécharger le Portfolio</button>
+				<a class="link" href="https://www.instagram.com/gloomygraphic/?hl=fr" target="_blank"
+					rel="noreferrer">Instagram</a>
+				<span class="dot" aria-hidden="true">·</span>
+				<a class="link" href="https://www.linkedin.com/in/tristan-raoult-2701721a4/" target="_blank"
+					rel="noreferrer">LinkedIn</a>
+			</div>
+		</section>
+
+		<!-- PROJETS -->
+		<section id="projects" class="section">
+			<div class="section-head">
+				<h2>Projets</h2>
+				<p class="muted">Sélection rapide (plus sur Instagram). Télécharge le PDF pour la vue complète.</p>
+			</div>
+
+			<div class="grid">
+				<!-- Nike -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/nike.png" alt="Poster Nike" loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>Nike — Poster</h3>
+						<p>Design percutant, minimal & sport.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/nike.png" data-title="Nike — Poster"
+							data-desc="Poster impactant : composition dynamique, contraste fort et hiérarchie typographique soignée.">
+							Voir
+						</a>
+					</div>
+				</article>
+
+				<!-- GloomyGraphic -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/gloomy.png" alt="Identité GloomyGraphic" loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>GloomyGraphic — Identité</h3>
+						<p>Logo, charte, affiches & déclinaisons.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/gloomy.png"
+							data-title="GloomyGraphic — Identité"
+							data-desc="Univers visuel organique : logo, système typographique, affiches et déclinaisons social media.">
+							Voir
+						</a>
+					</div>
+				</article>
+
+				<!-- Juriactes -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/Juriactes.png" alt="Vidéo animée Juriactes" loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>Juriactes — Vidéo animée</h3>
+						<p>Storyboard, animation After Effects, montage.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/Juriactes.png"
+							data-title="Juriactes — Vidéo animée"
+							data-desc="Film explicatif B2B : script, storyboard Illustrator, animation After Effects, montage & étalonnage.">
+							Voir
+						</a>
+					</div>
+				</article>
+
+				<!-- Kaweko -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/kaweko.png" alt="Publicité Kaweko" loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>Kaweko — Publicité</h3>
+						<p>Scénario, tournage, montage en équipe.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/kaweko.png"
+							data-title="Kaweko — Publicité"
+							data-desc="Spot court-métrage : mise en scène produit, tournage en bibliothèque, montage fluide & sound design.">
+							Voir
+						</a>
+					</div>
+				</article>
+
+				<!-- Fête foraine -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/fete.png" alt="Série photo Fête foraine" loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>Fête foraine — Photo</h3>
+						<p>Série photographique & étalonnage.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/fete.png"
+							data-title="Fête foraine — Série photo"
+							data-desc="Série couleur nocturne : cadrages serrés, textures lumineuses, étalonnage warm & grain subtil.">
+							Voir
+						</a>
+					</div>
+				</article>
+
+				<!-- CCCF -->
+				<article class="card reveal">
+					<div class="thumb">
+						<img src="images/portfolio/Chocolatiers_Confiseurs.png" alt="Chocolatiers & Confiseurs — Flyers"
+							loading="lazy">
+					</div>
+					<div class="card-body">
+						<h3>Chocolatiers & Confiseurs — Flyers</h3>
+						<p>Création alignée à l’agenda annuel.</p>
+						<a class="chip open" href="#" data-img="images/portfolio/Chocolatiers_Confiseurs.png"
+							data-title="Chocolatiers & Confiseurs — Flyers"
+							data-desc="2 flyers promotionnels réalisés sous délai court, respect strict de l’identité et des codes graphiques.">
+							Voir
+						</a>
+					</div>
+				</article>
+			</div>
+		</section>
+				<!-- EXPÉRIENCES -->
+				<section id="experience" class="section">
+				<div class="section-head">
+					<h2>Expériences</h2>
+					<p class="muted">De la plus récente à la plus ancienne.</p>
+				</div>
+
+				<div class="timeline">
+
+					<!-- OwlBlack -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Stage</span>
+						<h3>Graphiste & Motion Designer — OwlBlack</h3>
+						<p class="meta">avril → juin 2025</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Branding & mockups</b> pour plusieurs clients (logos, présentations animées).</li>
+						<li><b>Motion</b> : animations After Effects + <b>montages</b> sur Premiere Pro.</li>
+						<li><b>Shooting</b> photo/vidéo (Bayonne, Biarritz) & participation aux tournages.</li>
+						<li><b>Visuels IA</b> (Sora) pour vidéos pédagogiques SEO/SEA.</li>
+						<li><b>Juriactes</b> : storyboard complet → DA → animation finale.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">After Effects</span>
+						<span class="soft-chip">Premiere Pro</span>
+						<span class="soft-chip">Illustrator</span>
+						<span class="soft-chip">Sora</span>
+					</div>
+					</article>
+
+					<!-- Juriactes -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Projet client</span>
+						<h3>Juriactes — Vidéo animée B2B</h3>
+						<p class="meta">2025</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Vidéo complète</b> présentée en salon pro (écriture → animation → étalonnage).</li>
+						<li><b>Script</b> & <b>storyboard</b> détaillés (Illustrator) avant prod.</li>
+						<li><b>Livraison autonome</b> et conforme aux délais.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">After Effects</span>
+						<span class="soft-chip">Premiere Pro</span>
+						<span class="soft-chip">Illustrator</span>
+					</div>
+					</article>
+
+					<!-- GloomyGraphic / Focus -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Projet perso</span>
+						<h3>GloomyGraphic & Focus Podcast</h3>
+						<p class="meta">2024 → présent</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Direction artistique</b> et identité (logo, charte, univers).</li>
+						<li><b>Affiches</b> originales après chaque épisode (cohérence DA ↔ contenu).</li>
+						<li><b>Production visuelle</b> : logo, charte, visuels vidéo.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">DA</span>
+						<span class="soft-chip">Affiche</span>
+						<span class="soft-chip">Identité</span>
+					</div>
+					</article>
+
+					<!-- Workshops -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Workshop</span>
+						<h3>Communication — Bordeaux Média · Châteaux Coufran & Verdignan</h3>
+						<p class="meta">2024 → présent</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Refonte stratégique</b> & nouvelles <b>chartes</b> graphiques.</li>
+						<li><b>Concepts créatifs</b>, analyse des cibles, repositionnement.</li>
+						<li><b>Com événementielle</b> + réalisation / montage vidéo.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">Stratégie</span>
+						<span class="soft-chip">Charte</span>
+						<span class="soft-chip">Vidéo</span>
+					</div>
+					</article>
+
+					<!-- CCCF -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Freelance</span>
+						<h3>CCCF — Confédération des Chocolatiers & Confiseurs de France</h3>
+						<p class="meta">25 → 27 nov. 2024</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>2 flyers</b> pro en 48h, alignés à l’identité de l’agenda annuel.</li>
+						<li><b>Exécution rapide</b> & respect des codes graphiques.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">Flyer</span>
+						<span class="soft-chip">Graphisme</span>
+					</div>
+					</article>
+
+					<!-- Hold CD -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Freelance</span>
+						<h3>Hold CD — Plaquette commerciale</h3>
+						<p class="meta">25 sep. → 30 oct. 2024</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Plaquette A4</b> recto/verso adaptée du site web.</li>
+						<li><b>Fichier modifiable</b> livré pour autonomie client.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">Plaquette</span>
+						<span class="soft-chip">Mise en page</span>
+						<span class="soft-chip">Canva</span>
+					</div>
+					</article>
+
+					<!-- ISEG films -->
+					<article class="item reveal xp">
+					<header class="xp-head">
+						<span class="xp-kicker">Workshop</span>
+						<h3>Réalisation & Montage — ISEG</h3>
+						<p class="meta">2023 → 2024</p>
+					</header>
+					<ul class="xp-points">
+						<li><b>Sécurité routière</b> : court-métrage (scénario, tournage, montage, sound design).</li>
+						<li><b>Marque de stylos</b> : tournage en bibliothèque, montage fluide & esthétique.</li>
+					</ul>
+					<div class="xp-tags">
+						<span class="soft-chip">Tournage</span>
+						<span class="soft-chip">Montage</span>
+						<span class="soft-chip">Storytelling</span>
+					</div>
+					</article>
+
+					<!-- Éducation -->
+					<div class="edu reveal">
+					<h3>Éducation</h3>
+					<ul>
+						<li><strong>ISEG Bordeaux</strong> — 2023 → 2028 · Marketing, com & création (actuellement en 3ᵉ année)</li>
+						<li><strong>Baccalauréat — Lycée Largenté (Bayonne)</strong> — 2023 · Mention Assez Bien</li>
+					</ul>
+					</div>
+
+				</div>
+				</section>
+
+						
+		<!-- COMPÉTENCES -->
+<section id="skills" class="section">
+  <div class="section-head">
+    <h2>Compétences</h2>
+    <p class="muted">Hard skills (logiciels) + Soft skills (qualités pro).</p>
+  </div>
+
+  <div class="skills-grid">
+    <!-- COLONNE GAUCHE : HARD (BARRES) -->
+    <div class="hard bars">
+      <div class="skill" data-pct="85">
+        <div class="skill-head"><span>Photoshop</span><b class="pct">85%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Photoshop">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+
+      <div class="skill" data-pct="80">
+        <div class="skill-head"><span>Illustrator</span><b class="pct">80%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Illustrator">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+
+      <div class="skill" data-pct="75">
+        <div class="skill-head"><span>Premiere Pro</span><b class="pct">75%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Premiere Pro">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+
+      <div class="skill" data-pct="50">
+        <div class="skill-head"><span>After Effects</span><b class="pct">50%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="After Effects">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+
+      <div class="skill" data-pct="75">
+        <div class="skill-head"><span>VS Code</span><b class="pct">75%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="VS Code">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+
+      <div class="skill" data-pct="65">
+        <div class="skill-head"><span>Lightroom</span><b class="pct">65%</b></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Lightroom">
+          <span class="bar-fill"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE DROITE : SOFT (BULLES) -->
+    <aside class="soft reveal">
+      <div class="soft-wrap">
+        <span class="soft-chip">💬 Communication</span>
+        <span class="soft-chip">🤝 Travail d’équipe</span>
+        <span class="soft-chip">🧠 Créativité</span>
+        <span class="soft-chip">⏱️ Adaptabilité</span>
+        <span class="soft-chip">⏳ Gestion du temps</span>
+        <span class="soft-chip">🎯 Rigueur</span>
+        <span class="soft-chip">🚀 Autonomie</span>
+      </div>
+      <p class="muted soft-note">
+        Autodidacte passionné, je combine pratique terrain & formation pour livrer des projets propres, cohérents et efficaces.
+      </p>
+    </aside>
+  </div>
+</section>
+
+		<!-- SERVICES -->
+		<section id="services" class="section">
+			<div class="section-head">
+				<h2>Services</h2>
+				<p class="muted">Ce que je peux faire pour vous.</p>
+			</div>
+
+			<div class="services-grid">
+				<article class="svc reveal">
+					<h3>Identité Visuelle</h3>
+					<p>Logo & charte graphique pour une identité forte, cohérente & mémorable.</p>
+				</article>
+				<article class="svc reveal">
+					<h3>Stratégie de Communication</h3>
+					<p>Analyse des cibles, concepts créatifs & plan d’actions.</p>
+				</article>
+				<article class="svc reveal">
+					<h3>Graphisme</h3>
+					<p>Affiches, flyers, plaquettes & visuels digitaux.</p>
+				</article>
+				<article class="svc reveal">
+					<h3>Montage / Motion</h3>
+					<p>Publicités, teasers, vidéos pédagogiques (Premiere & After Effects).</p>
+				</article>
+				<article class="svc reveal">
+					<h3>Web Design</h3>
+					<p>Maquettes & UI sobres et modernes, centrées sur l’usage.</p>
+				</article>
+				<article class="svc reveal">
+					<h3>Consulting</h3>
+					<p>Conseils DA & accompagnement créatif.</p>
+				</article>
+			</div>
+		</section>
+
+		<!-- CONTACT -->
+		<section id="contact" class="section">
+			<div class="section-head">
+				<h2>Contact</h2>
+				<p class="muted">Dispo pour stage/alternance & missions freelance.</p>
+			</div>
+
+			<!-- Formulaire fonctionnel via FormSubmit (marche sur GitHub Pages) -->
+			<form class="contact-form reveal" action="https://formsubmit.co/tristan.raoult62@gmail.com" method="POST">
+				<!-- options FormSubmit -->
+				<input type="hidden" name="_subject" value="Nouveau message depuis le portfolio" />
+				<input type="hidden" name="_captcha" value="false" />
+				<input type="hidden" name="_template" value="table" />
+				<input type="hidden" name="_next" value="https://tristanraoult.github.io/portfolio/site.html?sent=1" />
+				<div class="row">
+					<label>Nom<input required type="text" name="nom" placeholder="Votre nom"
+							autocomplete="name"></label>
+					<label>Email<input required type="email" name="email" placeholder="votre@email.fr"
+							autocomplete="email"></label>
+				</div>
+				<label>Sujet<input type="text" name="sujet" placeholder="Sujet (optionnel)"></label>
+				<label>Message<textarea required name="message" rows="6"
+						placeholder="Votre message..."></textarea></label>
+				<button class="btn" type="submit">Envoyer</button>
+			</form>
+
+			<div class="contact-alt">
+				<a class="chip" href="mailto:tristan.raoult62@gmail.com">📧 tristan.raoult62@gmail.com</a>
+				<a class="chip" href="tel:+33768665558">📞 07 68 66 55 58</a>
+				<a class="chip" target="_blank" rel="noreferrer"
+					href="https://www.instagram.com/gloomygraphic/?hl=fr">📷 Instagram</a>
+				<a class="chip" target="_blank" rel="noreferrer"
+					href="https://www.linkedin.com/in/tristan-raoult-2701721a4/">💼 LinkedIn</a>
+			</div>
+		</section>
+	</main>
+
+	<!-- Modal Projet -->
+	<div id="workModal" class="modal" aria-hidden="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="workTitle">
+			<button class="modal-close" type="button" aria-label="Fermer" data-close>×</button>
+			<div class="modal-media">
+				<img id="workImg" alt="">
+			</div>
+			<div class="modal-copy">
+				<h3 id="workTitle"></h3>
+				<p id="workDesc" class="muted"></p>
+				<a id="workLink" class="chip" href="#" target="_blank" rel="noreferrer" style="display:none">Lien</a>
+			</div>
+		</div>
+	</div>
+	<!-- /Modal Projet -->
+
+<!-- Voir le Portfolio (PDF / MP4) -->
+<div id="viewModal" class="modal modal--small" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="viewTitle">
+    <button class="modal-close" type="button" aria-label="Fermer" data-close>×</button>
+    <div class="modal-copy">
+      <h3 id="viewTitle">Voir le Portfolio</h3>
+      <p class="muted">Choisissez le format :</p>
+      <div class="row row-btns">
+        <!-- PDF : vue Drive -->
+        <a class="btn"
+           href="https://drive.google.com/file/d/1llbsjI5MUaDOZwqhZ2LayQIK3zs3fHSf/view"
+           target="_blank" rel="noopener noreferrer">📄 Ouvrir en PDF</a>
+        <!-- MP4 : vue Drive -->
+        <a class="btn"
+           href="https://drive.google.com/file/d/1R_JPamTgH_WwHmjtZuuuH5WyN1GYgILC/view"
+           target="_blank" rel="noopener noreferrer">🎬 Ouvrir en MP4</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+	<footer class="site-footer">
+		<small>© <span id="year"></span> Tristan Raoult — Portfolio.</small>
+	</footer>
+
+	<!-- Boutons flottants -->
+	<a href="index.html" class="hub-fab" aria-label="Retour au hub">← Gloomy Hub</a>
+	<button id="toTop" class="totop" title="Haut de page" aria-label="Haut de page">↑</button>
+
+	<script src="js/site.js" defer></script>
+
+<script>
+  (function(){
+    const btn = document.getElementById('viewPortfolioBtn');
+    const md  = document.getElementById('viewModal');
+    if(!btn || !md) return;
+
+    const open  = ()=>{ md.classList.add('show'); document.body.style.overflow='hidden'; };
+    const close = ()=>{ md.classList.remove('show'); document.body.style.overflow=''; };
+
+    btn.addEventListener('click', open);
+    md.addEventListener('click', (e)=>{ if(e.target.hasAttribute('data-close')) close(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && md.classList.contains('show')) close(); });
+  })();
+</script>
+
+
+</body>
+
+</html>
