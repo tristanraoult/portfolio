@@ -54,15 +54,17 @@
     if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
     if (href.startsWith('#')) return;
     if (href.startsWith('http') && href.indexOf(location.hostname) === -1) return;
-    /* Même page avec ancre → scroll simple, pas de transition */
+    /* Même page (avec ou sans ancre) → jamais de transition overlay */
     try {
       var destUrl = new URL(a.href, location.href);
-      if (destUrl.pathname === location.pathname && destUrl.hash) {
-        var target = document.querySelector(destUrl.hash);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      if (destUrl.pathname === location.pathname) {
+        if (destUrl.hash) {
+          var target = document.querySelector(destUrl.hash);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
         return;
       }
-    } catch (err) {}
+    } catch (err) { return; }
     e.preventDefault();
     var dest = a.href;
     overlay.style.transition = 'opacity 0.38s cubic-bezier(0.4,0,1,1)';
