@@ -22,6 +22,8 @@
     'nav.menu-open .nav-burger span:nth-child(2){opacity:0!important;}',
     'nav.menu-open .nav-burger span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)!important;}',
     '}',
+    /* Cover hero moins zoomé sur mobile */
+    '@media(max-width:640px){#proj-hero{height:65vh!important;}}',
   ].join('');
   document.head.appendChild(style);
 
