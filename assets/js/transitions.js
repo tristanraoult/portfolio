@@ -24,6 +24,8 @@
     '}',
     /* Cover hero moins zoomé sur mobile */
     '@media(max-width:640px){#proj-hero{height:65vh!important;}}',
+    /* clip-path au lieu de overflow:hidden pour ne pas créer de sticky container */
+    '.clip-outer{clip-path:inset(0)!important;overflow:visible!important;}',
   ].join('');
   document.head.appendChild(style);
 
