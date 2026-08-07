@@ -28,6 +28,8 @@
     '.clip-outer{clip-path:inset(0)!important;overflow:visible!important;}',
     /* ph-meta mobile : empêche le collage "BORDEAUXAlternance" */
     '@media(max-width:810px){.ph-meta{flex-direction:column!important;gap:10px!important;align-items:flex-start!important;}.ph-tags{flex-wrap:wrap!important;gap:8px 16px!important;}}',
+    /* Focus sticky card home : neutralise scale(1.35) sur mobile (trop zoomé) */
+    '@media(max-width:810px){.card-sticky:nth-child(2) .card-frame img{transform:none!important;object-position:center 55%!important;}}',
   ].join('');
   document.head.appendChild(style);
 
