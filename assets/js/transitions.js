@@ -26,6 +26,8 @@
     '@media(max-width:640px){#proj-hero{height:65vh!important;}}',
     /* clip-path au lieu de overflow:hidden pour ne pas créer de sticky container */
     '.clip-outer{clip-path:inset(0)!important;overflow:visible!important;}',
+    /* ph-meta mobile : empêche le collage "BORDEAUXAlternance" */
+    '@media(max-width:810px){.ph-meta{flex-direction:column!important;gap:10px!important;align-items:flex-start!important;}.ph-tags{flex-wrap:wrap!important;gap:8px 16px!important;}}',
   ].join('');
   document.head.appendChild(style);
 
